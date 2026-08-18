@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Отзывы — Евгения Романова</title>
+<style>
+:root{
+  color-scheme:light;
+  --garnet:#6B1F2B;
+  --powder:#EFD8C4;
+  --graphite:#2E2B29;
+  --rose:#B87E76;
+  --card:#F8EADC;
+  --field:#FDF8F2;
+  --gold:linear-gradient(95deg,#F0C5B0 0%,#E2A591 20%,#874C4C 47%,#F9E0CA 66%,#9E605C 100%);
+  --bg:var(--powder);
+  --surface:var(--card);
+  --ink:var(--graphite);
+  --ink2:#4C4540;
+  --muted:#6E635D;
+  --line:rgba(184,126,118,.42);
+  --line-2:rgba(184,126,118,.66);
+  --serif:Georgia,"Iowan Old Style","Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+.topgold{height:4px;background:var(--gold);position:relative;z-index:50}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+.wrap{max-width:900px;margin:0 auto;padding:0 24px}
+.nav{position:sticky;top:0;z-index:40;backdrop-filter:blur(14px);
+  background:rgba(239,216,196,.9);transition:box-shadow .2s}
+.nav::after{content:"";position:absolute;inset:auto 0 0 0;height:2px;background:var(--gold);opacity:0;transition:opacity .22s}
+.nav.stuck::after{opacity:1}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:64px}
+.brand{font-family:var(--serif);font-size:17px;letter-spacing:.02em;color:var(--ink);text-decoration:none;white-space:nowrap}
+.brand .dot{color:var(--garnet)}
+.nav-links{display:flex;gap:26px;align-items:center}
+.nav-links a{color:var(--ink2);text-decoration:none;font-size:14.5px;transition:color .15s}
+.nav-links a:hover{color:var(--garnet)}
+.nav-cta{display:inline-block;border:1px solid var(--line-2);color:var(--garnet);text-decoration:none;
+  font-size:14px;padding:8px 16px;border-radius:8px;transition:background .15s,border-color .15s;white-space:nowrap}
+.nav-cta:hover{background:rgba(107,31,43,.08);border-color:var(--garnet)}
+@media(max-width:900px){.nav-links{display:none}}
+@media(max-width:640px){.brand .dot{display:none};.brand{font-size:16px};.nav-cta{padding:8px 13px;font-size:13.5px}}
+
+section{padding:76px 0;position:relative}
+section::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent 0%,rgba(226,165,145,.6) 14%,#874C4C 50%,rgba(226,165,145,.6) 86%,transparent 100%)}
+h1{font-family:var(--serif);font-weight:400;font-size:2.2em;line-height:1.2;letter-spacing:-.01em;margin:0 0 26px;color:var(--ink)}
+h2{font-family:var(--serif);font-weight:400;font-size:1.4em;line-height:1.2;letter-spacing:-.01em;margin:1.6em 0 0.8em;color:var(--ink)}
+p{margin:0 0 1em;color:var(--ink2);line-height:1.7}
+p:last-child{margin-bottom:0}
+
+.hero{padding:60px 0;background:linear-gradient(180deg,#F5E3D2 0%,var(--powder) 66%)}
+.hero h1{margin-bottom:16px}
+.hero p{font-size:1.05em;color:var(--ink2);max-width:70ch}
+
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:2em 0}
+.gallery-item{cursor:pointer;border-radius:12px;overflow:hidden;background:var(--card);
+  border:1px solid var(--line);transition:transform .2s,box-shadow .2s}
+.gallery-item:hover{transform:translateY(-4px);box-shadow:0 12px 24px rgba(107,31,43,.12)}
+.gallery-item img{width:100%;height:260px;object-fit:cover;display:block}
+
+/* Lightbox */
+.lightbox{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:100;
+  background:rgba(0,0,0,.8);backdrop-filter:blur(4px)}
+.lightbox.open{display:flex;align-items:center;justify-content:center}
+.lightbox-content{position:relative;max-width:90%;max-height:90vh;background:white;border-radius:16px;overflow:hidden;
+  display:flex;flex-direction:column}
+.lightbox-img{width:100%;height:auto;max-height:70vh;object-fit:contain}
+.lightbox-close{position:absolute;top:16px;right:16px;width:40px;height:40px;border:none;
+  background:rgba(0,0,0,.5);color:white;font-size:24px;cursor:pointer;border-radius:50%;
+  transition:background .2s;display:flex;align-items:center;justify-content:center}
+.lightbox-close:hover{background:rgba(0,0,0,.7)}
+
+.lightbox-nav{position:absolute;top:50%;width:100%;display:flex;justify-content:space-between;
+  padding:0 16px;transform:translateY(-50%);pointer-events:none}
+.lightbox-nav button{pointer-events:all;width:44px;height:44px;border:none;
+  background:rgba(0,0,0,.5);color:white;font-size:20px;cursor:pointer;border-radius:50%;
+  transition:background .2s}
+.lightbox-nav button:hover{background:rgba(0,0,0,.7)}
+
+.lightbox-counter{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);
+  background:rgba(0,0,0,.6);color:white;padding:8px 16px;border-radius:24px;font-size:14px}
+
+footer{background:var(--field);border-top:2px solid var(--gold);padding:60px 0;margin-top:80px}
+footer p{font-size:14px;color:var(--muted)}
+footer a{color:var(--garnet);text-decoration:none}
+footer a:hover{text-decoration:underline}
+.req{font-size:13px;color:var(--muted);margin-top:30px}
+.back-link{display:inline-block;margin-bottom:30px;color:var(--garnet);text-decoration:none;font-size:14px}
+.back-link:hover{text-decoration:underline}
+
+@media(max-width:768px){
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .lightbox-content{max-width:95%;max-height:85vh}
+  .lightbox-img{max-height:60vh}
+}
+
+@media(max-width:480px){
+  .gallery{grid-template-columns:1fr}
+  .lightbox-nav{padding:0 8px}
+  .lightbox-nav button{width:40px;height:40px;font-size:18px}
+}
+</style>
+</head><body>
+
+<div class="topgold"></div>
+
+<nav class="nav" id="nav">
+  <div class="wrap">
+    <a href="index.html" class="brand">Евгения Романова<span class="dot">.</span></a>
+    <div class="nav-links">
+      <a href="index.html">На сайт</a>
+      <a href="mailto:tonkiyenastroyki@mail.ru" class="nav-cta">Написать</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <a href="index.html" class="back-link">← На главную</a>
+    <h1>Отзывы клиентов</h1>
+    <p>Реальные отзывы людей, которые прошли консультации и получили нужные ответы</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p style="text-align:center;color:var(--muted);margin-bottom:2em">Нажмите на любой отзыв, чтобы увидеть его в полном размере</p>
+    
+    <div class="gallery" id="gallery"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Отзывы от реальных клиентов, которые получили консультации по натальным картам, транзитам и прогнозам.</p>
+    <p class="req">Романова Евгения Алумбаевна · плательщик налога на профессиональный доход · ИНН 591108165378</p>
+  </div>
+</footer>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-content">
+    <button class="lightbox-close" onclick="closeLightbox()">×</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="">
+    <div class="lightbox-nav">
+      <button onclick="prevPhoto()">‹</button>
+      <button onclick="nextPhoto()">›</button>
+    </div>
+    <div class="lightbox-counter">
+      <span id="counter">1</span> / 10
+    </div>
+  </div>
+</div>
+
+<script>
+const REVIEWS = [
+  'IMG_1747.jpeg',
+  'IMG_1748.jpeg',
+  'IMG_1749.jpeg',
+  'IMG_1750.jpeg',
+  'IMG_1751.jpeg',
+  'IMG_1752.jpeg',
+  'IMG_1753.jpeg',
+  'IMG_1754.jpeg',
+  'IMG_1755.jpeg',
+  'IMG_1756.jpeg'
+];
+
+let currentIndex = 0;
+
+// Инициализация галереи
+const gallery = document.getElementById('gallery');
+REVIEWS.forEach((photo, index) => {
+  const item = document.createElement('div');
+  item.className = 'gallery-item';
+  item.onclick = () => openLightbox(index);
+  
+  const img = document.createElement('img');
+  img.src = photo;
+  img.alt = `Отзыв ${index + 1}`;
+  img.loading = 'lazy';
+  
+  item.appendChild(img);
+  gallery.appendChild(item);
+});
+
+// Lightbox функции
+function openLightbox(index) {
+  currentIndex = index;
+  updateLightbox();
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = 'auto';
+}
+
+function nextPhoto() {
+  currentIndex = (currentIndex + 1) % REVIEWS.length;
+  updateLightbox();
+}
+
+function prevPhoto() {
+  currentIndex = (currentIndex - 1 + REVIEWS.length) % REVIEWS.length;
+  updateLightbox();
+}
+
+function updateLightbox() {
+  document.getElementById('lightboxImg').src = REVIEWS[currentIndex];
+  document.getElementById('counter').textContent = currentIndex + 1;
+}
+
+// Клавиатурная навигация
+document.addEventListener('keydown', (e) => {
+  if (!document.getElementById('lightbox').classList.contains('open')) return;
+  if (e.key === 'ArrowRight') nextPhoto();
+  if (e.key === 'ArrowLeft') prevPhoto();
+  if (e.key === 'Escape') closeLightbox();
+});
+
+// Sticky nav
+const nav = document.getElementById('nav');
+addEventListener('scroll', () => nav.classList.toggle('stuck', scrollY > 10), { passive: true });
+
+// Закрытие lightbox при клике на фон
+document.getElementById('lightbox').addEventListener('click', (e) => {
+  if (e.target.id === 'lightbox') closeLightbox();
+});
+</script>
+</body></html>
