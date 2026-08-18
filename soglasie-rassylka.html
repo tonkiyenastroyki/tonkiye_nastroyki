@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Согласие на рассылку — Евгения Романова</title>
+<style>
+:root{
+  color-scheme:light;
+  --garnet:#6B1F2B;
+  --powder:#EFD8C4;
+  --graphite:#2E2B29;
+  --rose:#B87E76;
+  --card:#F8EADC;
+  --field:#FDF8F2;
+  --gold:linear-gradient(95deg,#F0C5B0 0%,#E2A591 20%,#874C4C 47%,#F9E0CA 66%,#9E605C 100%);
+  --bg:var(--powder);
+  --surface:var(--card);
+  --ink:var(--graphite);
+  --ink2:#4C4540;
+  --muted:#6E635D;
+  --line:rgba(184,126,118,.42);
+  --line-2:rgba(184,126,118,.66);
+  --serif:Georgia,"Iowan Old Style","Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+.topgold{height:4px;background:var(--gold);position:relative;z-index:50}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+.wrap{max-width:900px;margin:0 auto;padding:0 24px}
+.nav{position:sticky;top:0;z-index:40;backdrop-filter:blur(14px);
+  background:rgba(239,216,196,.9);transition:box-shadow .2s}
+.nav::after{content:"";position:absolute;inset:auto 0 0 0;height:2px;background:var(--gold);opacity:0;transition:opacity .22s}
+.nav.stuck::after{opacity:1}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:64px}
+.brand{font-family:var(--serif);font-size:17px;letter-spacing:.02em;color:var(--ink);text-decoration:none;white-space:nowrap}
+.brand .dot{color:var(--garnet)}
+.nav-links{display:flex;gap:26px;align-items:center}
+.nav-links a{color:var(--ink2);text-decoration:none;font-size:14.5px;transition:color .15s}
+.nav-links a:hover{color:var(--garnet)}
+.nav-cta{display:inline-block;border:1px solid var(--line-2);color:var(--garnet);text-decoration:none;
+  font-size:14px;padding:8px 16px;border-radius:8px;transition:background .15s,border-color .15s;white-space:nowrap}
+.nav-cta:hover{background:rgba(107,31,43,.08);border-color:var(--garnet)}
+@media(max-width:900px){.nav-links{display:none}}
+@media(max-width:640px){.brand .dot{display:none};.brand{font-size:16px};.nav-cta{padding:8px 13px;font-size:13.5px}}
+
+section{padding:76px 0;position:relative}
+section::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent 0%,rgba(226,165,145,.6) 14%,#874C4C 50%,rgba(226,165,145,.6) 86%,transparent 100%)}
+h1{font-family:var(--serif);font-weight:400;font-size:2.2em;line-height:1.2;letter-spacing:-.01em;margin:0 0 26px;color:var(--ink)}
+h2{font-family:var(--serif);font-weight:400;font-size:1.4em;line-height:1.2;letter-spacing:-.01em;margin:1.6em 0 0.8em;color:var(--ink)}
+h3{font-weight:600;font-size:1em;margin:1.2em 0 0.6em;color:var(--ink)}
+p{margin:0 0 1em;color:var(--ink2);line-height:1.7}
+p:last-child{margin-bottom:0}
+strong{color:var(--ink);font-weight:600}
+ul,ol{margin:1em 0;padding-left:2em;color:var(--ink2)}
+li{margin:0.6em 0;line-height:1.6}
+.hero{padding:60px 0;background:linear-gradient(180deg,#F5E3D2 0%,var(--powder) 66%)}
+.hero h1{margin-bottom:16px}
+.hero p{font-size:1.05em;color:var(--ink2);max-width:70ch}
+footer{background:var(--field);border-top:2px solid var(--gold);padding:60px 0;margin-top:80px}
+footer p{font-size:14px;color:var(--muted)}
+footer a{color:var(--garnet);text-decoration:none}
+footer a:hover{text-decoration:underline}
+.req{font-size:13px;color:var(--muted);margin-top:30px}
+.back-link{display:inline-block;margin-bottom:30px;color:var(--garnet);text-decoration:none;font-size:14px}
+.back-link:hover{text-decoration:underline}
+</style>
+</head><body>
+
+<div class="topgold"></div>
+
+<nav class="nav" id="nav">
+  <div class="wrap">
+    <a href="index.html" class="brand">Евгения Романова<span class="dot">.</span></a>
+    <div class="nav-links">
+      <a href="index.html">На сайт</a>
+      <a href="mailto:tonkiyenastroyki@mail.ru" class="nav-cta">Написать</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <a href="index.html" class="back-link">← На главную</a>
+    <h1>Согласие на рассылку электронных сообщений</h1>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p><strong>Согласие на рассылку электронных сообщений</strong> – документ, являющийся основанием для рассылки материалов рекламного и (или) информационного характера посредством SMS- серверов и (или) с электронной почты Индивидуального предпринимателя/самозанятого Романовой Евгении Алумбаевны, (ИНН 591108165378, ОГРНИП не применяется, эл. почта: tonkiyenastroyki@mail.ru, телефон: +7 981 997-39-44, адрес: 197376, г. Санкт-Петербург, ул. Планерная, д. 89, кв. 63).</p>
+
+    <h2>Участники согласия</h2>
+    <p><strong>Исполнитель</strong> – Романова Евгения Алумбаевна</p>
+
+    <p>Информация об оказываемых Исполнителем услугах размещена в Telegram-боте @tonkiye_nastroyki_bot. Связь с Исполнителем также осуществляется через личный Telegram-аккаунт @astrotune_practice.</p>
+
+    <p><strong>Пользователь, Заказчик</strong> – физическое лицо, использующее Telegram-бот @tonkiye_nastroyki_bot либо обратившееся к Исполнителю через личный Telegram-аккаунт @astrotune_practice, электронную почту или специализированную платформу.</p>
+
+    <p><strong>Политика конфиденциальности и положение об обработке персональных данных</strong> – документы, на основании которых пользователь дает свое согласие на рассылку электронных сообщений.</p>
+
+    <h2>Предмет согласия</h2>
+    <p>Настоящее Согласие на рассылку электронных сообщений (далее – <strong>«Согласие»</strong>) является основанием для направления Заказчику информационных и(или) рекламных сообщений по электронной почте от Оператора Романовой Евгении Алумбаевны.</p>
+
+    <h2>Порядок предоставления согласия</h2>
+    <p>Пользователь предоставляет отдельное предварительное Согласие на получение информационных и (или) рекламных сообщений до направления первой рассылки. Согласие подтверждается однозначным действием Пользователя: нажатием отдельной кнопки согласия в Telegram-боте @tonkiye_nastroyki_bot либо направлением Оператору через личный Telegram-аккаунт @astrotune_practice или электронную почту отдельного электронного сообщения, прямо выражающего согласие на получение информационных и (или) рекламных сообщений. Использование Telegram-бота, направление заявки и оплата услуг сами по себе не означают предоставления настоящего Согласия. Оператор сохраняет сведения, позволяющие подтвердить факт, дату и способ получения Согласия.</p>
+
+    <p>Пользователь подтверждает, что действует по своей воли и в своём интересе.</p>
+
+    <p>Настоящее Согласие является конкретным, предметным, информированным, сознательным и однозначным. Предоставляя настоящее Согласие отдельным действием, Пользователь соглашается на получение материалов рекламного и (или) информационного характера посредством SMS-сообщений, сообщений в Telegram с личного аккаунта @astrotune_practice и (или) электронной почты и подтверждает, что ознакомлен с Офертой, Политикой обработки персональных данных, Согласием на обработку персональных данных и настоящим Согласием.</p>
+
+    <h2>Актуализация и отзыв согласия на рассылку электронных сообщений</h2>
+    <p>Пользователь ознакомлен с информацией о том, что в любой момент в течение всего срока действия настоящего Согласия, вправе отозвать согласие на получение рассылки электронных сообщений путём направления запроса на электронную почту Оператора: tonkiyenastroyki@mail.ru.</p>
+
+    <p>Пользователь даёт Согласие на получение рассылки электронных сообщений со дня его предоставления и до получения отзыва указанного согласия самозанятой Романовой Евгении Алумбаевне.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Обращаясь ко мне за консультацией и оплачивая услугу, вы принимаете условия публичной оферты и подтверждаете, что ознакомлены с политикой обработки персональных данных.</p>
+    <p class="req">Романова Евгения Алумбаевна · плательщик налога на профессиональный доход · ИНН 591108165378</p>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+addEventListener('scroll', () => nav.classList.toggle('stuck', scrollY > 10), { passive: true });
+</script>
+</body></html>
