@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Политика обработки персональных данных — Евгения Романова</title>
+<style>
+:root{
+  color-scheme:light;
+  --garnet:#6B1F2B;
+  --powder:#EFD8C4;
+  --graphite:#2E2B29;
+  --rose:#B87E76;
+  --card:#F8EADC;
+  --field:#FDF8F2;
+  --gold:linear-gradient(95deg,#F0C5B0 0%,#E2A591 20%,#874C4C 47%,#F9E0CA 66%,#9E605C 100%);
+  --bg:var(--powder);
+  --surface:var(--card);
+  --ink:var(--graphite);
+  --ink2:#4C4540;
+  --muted:#6E635D;
+  --line:rgba(184,126,118,.42);
+  --line-2:rgba(184,126,118,.66);
+  --serif:Georgia,"Iowan Old Style","Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+.topgold{height:4px;background:var(--gold);position:relative;z-index:50}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+.wrap{max-width:900px;margin:0 auto;padding:0 24px}
+.nav{position:sticky;top:0;z-index:40;backdrop-filter:blur(14px);
+  background:rgba(239,216,196,.9);transition:box-shadow .2s}
+.nav::after{content:"";position:absolute;inset:auto 0 0 0;height:2px;background:var(--gold);opacity:0;transition:opacity .22s}
+.nav.stuck::after{opacity:1}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:64px}
+.brand{font-family:var(--serif);font-size:17px;letter-spacing:.02em;color:var(--ink);text-decoration:none;white-space:nowrap}
+.brand .dot{color:var(--garnet)}
+.nav-links{display:flex;gap:26px;align-items:center}
+.nav-links a{color:var(--ink2);text-decoration:none;font-size:14.5px;transition:color .15s}
+.nav-links a:hover{color:var(--garnet)}
+.nav-cta{display:inline-block;border:1px solid var(--line-2);color:var(--garnet);text-decoration:none;
+  font-size:14px;padding:8px 16px;border-radius:8px;transition:background .15s,border-color .15s;white-space:nowrap}
+.nav-cta:hover{background:rgba(107,31,43,.08);border-color:var(--garnet)}
+@media(max-width:900px){.nav-links{display:none}}
+@media(max-width:640px){.brand .dot{display:none};.brand{font-size:16px};.nav-cta{padding:8px 13px;font-size:13.5px}}
+
+section{padding:76px 0;position:relative}
+section::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent 0%,rgba(226,165,145,.6) 14%,#874C4C 50%,rgba(226,165,145,.6) 86%,transparent 100%)}
+h1{font-family:var(--serif);font-weight:400;font-size:2.2em;line-height:1.2;letter-spacing:-.01em;margin:0 0 26px;color:var(--ink)}
+h2{font-family:var(--serif);font-weight:400;font-size:1.4em;line-height:1.2;letter-spacing:-.01em;margin:1.6em 0 0.8em;color:var(--ink)}
+h3{font-weight:600;font-size:1em;margin:1.2em 0 0.6em;color:var(--ink)}
+p{margin:0 0 1em;color:var(--ink2);line-height:1.7}
+p:last-child{margin-bottom:0}
+strong{color:var(--ink);font-weight:600}
+ul,ol{margin:1em 0;padding-left:2em;color:var(--ink2)}
+li{margin:0.6em 0;line-height:1.6}
+.hero{padding:60px 0;background:linear-gradient(180deg,#F5E3D2 0%,var(--powder) 66%)}
+.hero h1{margin-bottom:16px}
+.hero p{font-size:1.05em;color:var(--ink2);max-width:70ch}
+footer{background:var(--field);border-top:2px solid var(--gold);padding:60px 0;margin-top:80px}
+footer p{font-size:14px;color:var(--muted)}
+footer a{color:var(--garnet);text-decoration:none}
+footer a:hover{text-decoration:underline}
+.req{font-size:13px;color:var(--muted);margin-top:30px}
+.back-link{display:inline-block;margin-bottom:30px;color:var(--garnet);text-decoration:none;font-size:14px}
+.back-link:hover{text-decoration:underline}
+</style>
+</head><body>
+
+<div class="topgold"></div>
+
+<nav class="nav" id="nav">
+  <div class="wrap">
+    <a href="index.html" class="brand">Евгения Романова<span class="dot">.</span></a>
+    <div class="nav-links">
+      <a href="index.html">На сайт</a>
+      <a href="mailto:tonkiyenastroyki@mail.ru" class="nav-cta">Написать</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <a href="index.html" class="back-link">← На главную</a>
+    <h1>Политика обработки персональных данных</h1>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>1. Общие положения</h2>
+    <p>Настоящая политика обработки персональных данных (далее – «Политика») определяет принципы и порядок обработки персональных данных физических лиц, обратившихся к Романовой Евгении Алумбаевне (далее – «Оператор», «Исполнитель», «Мы») за консультационными услугами в области астрологии.</p>
+
+    <p>Оператор рассматривает защиту персональных данных как важную часть своей ответственности перед клиентами и соблюдает все требования Федерального закона от 27 июля 2006 г. № 152-ФЗ «О персональных данных».</p>
+
+    <h2>2. Данные Оператора</h2>
+    <ul>
+      <li><strong>ФИО:</strong> Романова Евгения Алумбаевна</li>
+      <li><strong>Статус:</strong> плательщик налога на профессиональный доход</li>
+      <li><strong>ИНН:</strong> 591108165378</li>
+      <li><strong>Адрес:</strong> 197376, г. Санкт-Петербург, ул. Планерная, д. 89, кв. 63</li>
+      <li><strong>Электронная почта:</strong> tonkiyenastroyki@mail.ru</li>
+      <li><strong>Телефон:</strong> +7 981 997-39-44</li>
+      <li><strong>Telegram:</strong> @astrotune_practice, @tonkiye_nastroyki_bot</li>
+    </ul>
+
+    <h2>3. Категории собираемых данных</h2>
+    <p>Оператор собирает персональные данные исключительно для целей оказания консультационных услуг и не собирает избыточные данные. К собираемым данным относятся:</p>
+    <ul>
+      <li>Фамилия, имя, отчество</li>
+      <li>Номер телефона, адрес электронной почты</li>
+      <li>Имя пользователя и данные профиля в мессенджерах (Telegram и др.)</li>
+      <li>Дата, время и место рождения (только для астрологических консультаций)</li>
+      <li>Содержание личной переписки и вопросов клиента</li>
+      <li>Информация о платежах и заключённых договорах</li>
+    </ul>
+
+    <p>Оператор <strong>не собирает</strong>: паспортные данные, СНИЛС, информацию о воинской обязанности, образовании, трудовой деятельности, составе семьи без явной необходимости.</p>
+
+    <h2>4. Цели обработки данных</h2>
+    <p>Персональные данные обрабатываются в следующих целях:</p>
+    <ul>
+      <li>Оказание консультационных и астрологических услуг</li>
+      <li>Связь с клиентом и рассмотрение его запросов</li>
+      <li>Заключение и исполнение договора об оказании услуг</li>
+      <li>Проведение расчётов и формирование документов (чеки, квитанции)</li>
+      <li>Ведение учёта обращений и разрешение возможных споров</li>
+      <li>Исполнение обязательств по налоговому законодательству</li>
+      <li>Защита прав и законных интересов сторон</li>
+    </ul>
+
+    <h2>5. Способы и сроки обработки</h2>
+    <p>Обработка осуществляется смешанным способом – как с использованием средств автоматизации, так и вручную. Данные передаются по сети Интернет через защищённые каналы связи.</p>
+
+    <p><strong>Сроки хранения:</strong></p>
+    <ul>
+      <li>Материалы консультаций и переписка: до 6 месяцев после завершения услуги</li>
+      <li>Данные для подтверждения договора и расчётов: согласно законодательству РФ (минимум 3-6 лет)</li>
+      <li>После достижения целей обработки или отзыва согласия: удаление в течение 30 дней</li>
+    </ul>
+
+    <h2>6. Передача данных третьим лицам</h2>
+    <p>Оператор не передаёт персональные данные третьим лицам без согласия клиента, за исключением:</p>
+    <ul>
+      <li>Случаев, предусмотренных законодательством РФ</li>
+      <li>Технических поставщиков услуг (хостинг, платежные системы) в объёме, необходимом для функционирования сервисов</li>
+    </ul>
+
+    <h2>7. Права субъектов персональных данных</h2>
+    <p>Каждый клиент имеет право:</p>
+    <ul>
+      <li>Получить информацию о том, какие его данные обрабатываются</li>
+      <li>Потребовать уточнение, блокирование или удаление своих данных</li>
+      <li>Отозвать согласие на обработку данных в любой момент</li>
+      <li>Обратиться с жалобой в надзорные органы в случае нарушения прав</li>
+    </ul>
+
+    <h2>8. Порядок реализации прав</h2>
+    <p>Для реализации перечисленных выше прав клиент может направить запрос на адрес электронной почты оператора: <strong>tonkiyenastroyki@mail.ru</strong> или сообщение в Telegram: <strong>@astrotune_practice</strong>.</p>
+
+    <p>Запрос должен содержать:</p>
+    <ul>
+      <li>ФИО заявителя (или идентификацию по контактным данным)</li>
+      <li>Описание желаемого действия (уточнение, блокирование, удаление, отзыв согласия)</li>
+      <li>Контактные данные для ответа</li>
+    </ul>
+
+    <p>Оператор обязуется ответить на запрос в течение 30 дней.</p>
+
+    <h2>9. Безопасность данных</h2>
+    <p>Оператор принимает необходимые организационные и технические меры для защиты персональных данных от неправомерного доступа, изменения, передачи и уничтожения, включая:</p>
+    <ul>
+      <li>Ограничение доступа к данным</li>
+      <li>Использование защищённых каналов связи</li>
+      <li>Регулярное обновление систем безопасности</li>
+    </ul>
+
+    <h2>10. Связь с клиентом</h2>
+    <p>Оператор может отправлять клиентам:</p>
+    <ul>
+      <li>Служебные уведомления, связанные с оказанием услуг</li>
+      <li>Информационные и рекламные материалы только с явного согласия клиента</li>
+    </ul>
+
+    <p>Клиент может в любой момент отказаться от получения рекламных рассылок, направив соответствующий запрос на почту оператора.</p>
+
+    <h2>11. Изменения политики</h2>
+    <p>Оператор вправе изменять настоящую политику. О значительных изменениях клиенты будут уведомлены посредством отправки уведомления на указанный адрес электронной почты.</p>
+
+    <h2>12. Контакты и обратная связь</h2>
+    <p>По вопросам обработки персональных данных вы можете обратиться к Оператору:</p>
+    <ul>
+      <li>Электронная почта: tonkiyenastroyki@mail.ru</li>
+      <li>Telegram: @astrotune_practice</li>
+      <li>Telegram-бот: @tonkiye_nastroyki_bot</li>
+    </ul>
+
+    <p>Версия политики: 31.07.2026</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Обращаясь ко мне за консультацией и оплачивая услугу, вы принимаете условия публичной оферты и подтверждаете, что ознакомлены с политикой обработки персональных данных.</p>
+    <p class="req">Романова Евгения Алумбаевна · плательщик налога на профессиональный доход · ИНН 591108165378</p>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+addEventListener('scroll', () => nav.classList.toggle('stuck', scrollY > 10), { passive: true });
+</script>
+</body></html>

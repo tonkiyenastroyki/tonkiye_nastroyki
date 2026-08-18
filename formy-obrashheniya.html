@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Формы обращения — Евгения Романова</title>
+<style>
+:root{
+  color-scheme:light;
+  --garnet:#6B1F2B;
+  --powder:#EFD8C4;
+  --graphite:#2E2B29;
+  --rose:#B87E76;
+  --card:#F8EADC;
+  --field:#FDF8F2;
+  --gold:linear-gradient(95deg,#F0C5B0 0%,#E2A591 20%,#874C4C 47%,#F9E0CA 66%,#9E605C 100%);
+  --bg:var(--powder);
+  --surface:var(--card);
+  --ink:var(--graphite);
+  --ink2:#4C4540;
+  --muted:#6E635D;
+  --line:rgba(184,126,118,.42);
+  --line-2:rgba(184,126,118,.66);
+  --serif:Georgia,"Iowan Old Style","Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+.topgold{height:4px;background:var(--gold);position:relative;z-index:50}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+.wrap{max-width:900px;margin:0 auto;padding:0 24px}
+.nav{position:sticky;top:0;z-index:40;backdrop-filter:blur(14px);
+  background:rgba(239,216,196,.9);transition:box-shadow .2s}
+.nav::after{content:"";position:absolute;inset:auto 0 0 0;height:2px;background:var(--gold);opacity:0;transition:opacity .22s}
+.nav.stuck::after{opacity:1}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:64px}
+.brand{font-family:var(--serif);font-size:17px;letter-spacing:.02em;color:var(--ink);text-decoration:none;white-space:nowrap}
+.brand .dot{color:var(--garnet)}
+.nav-links{display:flex;gap:26px;align-items:center}
+.nav-links a{color:var(--ink2);text-decoration:none;font-size:14.5px;transition:color .15s}
+.nav-links a:hover{color:var(--garnet)}
+.nav-cta{display:inline-block;border:1px solid var(--line-2);color:var(--garnet);text-decoration:none;
+  font-size:14px;padding:8px 16px;border-radius:8px;transition:background .15s,border-color .15s;white-space:nowrap}
+.nav-cta:hover{background:rgba(107,31,43,.08);border-color:var(--garnet)}
+@media(max-width:900px){.nav-links{display:none}}
+@media(max-width:640px){.brand .dot{display:none};.brand{font-size:16px};.nav-cta{padding:8px 13px;font-size:13.5px}}
+
+section{padding:76px 0;position:relative}
+section::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent 0%,rgba(226,165,145,.6) 14%,#874C4C 50%,rgba(226,165,145,.6) 86%,transparent 100%)}
+h1{font-family:var(--serif);font-weight:400;font-size:2.2em;line-height:1.2;letter-spacing:-.01em;margin:0 0 26px;color:var(--ink)}
+h2{font-family:var(--serif);font-weight:400;font-size:1.4em;line-height:1.2;letter-spacing:-.01em;margin:2em 0 0.8em;color:var(--ink)}
+h3{font-weight:600;font-size:1.1em;margin:1.4em 0 0.6em;color:var(--ink)}
+p{margin:0 0 1em;color:var(--ink2);line-height:1.7}
+p:last-child{margin-bottom:0}
+strong{color:var(--ink);font-weight:600}
+ul,ol{margin:1em 0;padding-left:2em;color:var(--ink2)}
+li{margin:0.6em 0;line-height:1.6}
+
+.hero{padding:60px 0;background:linear-gradient(180deg,#F5E3D2 0%,var(--powder) 66%)}
+.hero h1{margin-bottom:16px}
+.hero p{font-size:1.05em;color:var(--ink2);max-width:70ch}
+
+.form-box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:30px;margin:2em 0;position:relative;overflow:hidden}
+.form-box::before{content:"";position:absolute;top:0;left:0;width:64px;height:4px;background:var(--gold)}
+
+.form-group{margin-bottom:1.5em}
+.form-group:last-child{margin-bottom:0}
+label{display:block;font-weight:600;margin-bottom:0.4em;color:var(--ink)}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea{width:100%;padding:12px;border:1px solid var(--line);border-radius:6px;
+  font-family:var(--sans);font-size:1em;color:var(--ink);background:var(--field)}
+textarea{resize:vertical;min-height:120px;line-height:1.6}
+input:focus,textarea:focus{outline:none;border-color:var(--rose);box-shadow:0 0 0 3px rgba(184,126,118,.1)}
+
+.form-hint{font-size:0.9em;color:var(--muted);margin-top:0.4em}
+.required{color:var(--rose)}
+
+footer{background:var(--field);border-top:2px solid var(--gold);padding:60px 0;margin-top:80px}
+footer p{font-size:14px;color:var(--muted)}
+footer a{color:var(--garnet);text-decoration:none}
+footer a:hover{text-decoration:underline}
+.req{font-size:13px;color:var(--muted);margin-top:30px}
+.back-link{display:inline-block;margin-bottom:30px;color:var(--garnet);text-decoration:none;font-size:14px}
+.back-link:hover{text-decoration:underline}
+
+.note-box{background:rgba(107,31,43,.06);border-left:4px solid var(--garnet);padding:16px;margin:1.5em 0;border-radius:4px}
+.note-box p{margin:0;color:var(--ink2);font-size:0.95em}
+
+@media print{
+  .nav,.back-link,.hero p:not(.goldrule)~p{display:none}
+  body{background:white}
+  .form-box{page-break-inside:avoid;border:2px solid var(--graphite)}
+}
+</style>
+</head><body>
+
+<div class="topgold"></div>
+
+<nav class="nav" id="nav">
+  <div class="wrap">
+    <a href="index.html" class="brand">Евгения Романова<span class="dot">.</span></a>
+    <div class="nav-links">
+      <a href="index.html">На сайт</a>
+      <a href="mailto:tonkiyenastroyki@mail.ru" class="nav-cta">Написать</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <a href="index.html" class="back-link">← На главную</a>
+    <h1>Формы обращения клиента</h1>
+    <p>Вы можете использовать эти формы для отказа от услуги, отзыва согласия на обработку данных или запроса на изменение ваших данных.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Как отправить форму</h2>
+    <p>Заполните подходящую форму ниже, скопируйте её содержимое и отправьте на электронную почту:</p>
+    <p><strong>tonkiyenastroyki@mail.ru</strong></p>
+    <p>Используйте адрес электронной почты или аккаунт, которые вы указывали при заказе. Оператор вправе запросить дополнительные сведения для вашей идентификации.</p>
+
+    <!-- ========== ФОРМА 1 ========== -->
+    <h2>1. Заявление об отказе от услуги и возврате</h2>
+    <p>Используйте эту форму, если вы хотите прекратить договор на оказание консультационной услуги и запросить возврат средств.</p>
+    
+    <div class="form-box">
+      <div class="form-group">
+        <label>Кому: Романова Евгения Алумбаевна</label>
+        <p style="margin: 0; color: var(--muted); font-size: 0.9em;">ИНН 591108165378, tonkiyenastroyki@mail.ru</p>
+      </div>
+
+      <div class="form-group">
+        <label>От: <span class="required">*</span></label>
+        <input type="text" placeholder="Ваше полное имя">
+      </div>
+
+      <div class="form-group">
+        <label>Контакты: <span class="required">*</span></label>
+        <input type="email" placeholder="Ваш адрес электронной почты или номер телефона">
+      </div>
+
+      <div class="form-group">
+        <label>Прошу прекратить договор на оказание консультационной услуги: <span class="required">*</span></label>
+        <input type="text" placeholder="Описание услуги (например, натальная карта, транзиты)">
+      </div>
+
+      <div class="form-group">
+        <label>Дата и сумма оплаты: <span class="required">*</span></label>
+        <input type="text" placeholder="Например: 15.07.2026, 3000 руб.">
+      </div>
+
+      <div class="form-group">
+        <label>Причина отказа (по желанию):</label>
+        <textarea placeholder="Опишите причину отказа, если хотите..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Реквизиты для возврата (если требуются):</label>
+        <textarea placeholder="Номер счёта или другие реквизиты для возврата средств..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Дата подписания:</label>
+        <input type="text" placeholder="__.__.__">
+      </div>
+
+      <p style="color: var(--muted); font-size: 0.9em; margin-top: 1.5em;">
+        Я прошу прекратить договор и вернуть причитающуюся сумму в соответствии с законодательством РФ, 
+        с учётом фактически оказанного объёма услуг и документально подтверждённых расходов.
+      </p>
+    </div>
+
+    <!-- ========== ФОРМА 2 ========== -->
+    <h2>2. Отзыв согласия на обработку персональных данных</h2>
+    <p>Используйте эту форму для отзыва согласия на обработку ваших персональных данных. После отзыва данные будут удалены в течение 30 дней (кроме данных, хранение которых требуется законом).</p>
+    
+    <div class="form-box">
+      <div class="form-group">
+        <label>Кому: Романова Евгения Алумбаевна</label>
+        <p style="margin: 0; color: var(--muted); font-size: 0.9em;">tonkiyenastroyki@mail.ru</p>
+      </div>
+
+      <div class="form-group">
+        <label>Я, <span class="required">*</span></label>
+        <input type="text" placeholder="Ваше полное имя">
+      </div>
+
+      <div class="form-group">
+        <textarea placeholder="отзываю согласие на обработку моих персональных данных. Прошу прекратить обработку и уничтожить данные, если отсутствует иное законное основание для их обработки или хранения."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Контакт для ответа: <span class="required">*</span></label>
+        <input type="email" placeholder="Ваш адрес электронной почты или номер телефона">
+      </div>
+
+      <div class="form-group">
+        <label>Дата подписания:</label>
+        <input type="text" placeholder="__.__.__">
+      </div>
+
+      <div class="note-box">
+        <p><strong>Важно:</strong> отзыв согласия до завершения консультации может сделать дальнейшее оказание услуги невозможным. 
+        После отзыва оператор вправе продолжить обработку данных при наличии других законных оснований.</p>
+      </div>
+    </div>
+
+    <!-- ========== ФОРМА 3 ========== -->
+    <h2>3. Требование об уточнении, блокировании или удалении данных</h2>
+    <p>Используйте эту форму, если вы хотите уточнить, заблокировать или удалить определённые ваши персональные данные.</p>
+    
+    <div class="form-box">
+      <div class="form-group">
+        <label>Я, <span class="required">*</span></label>
+        <input type="text" placeholder="Ваше полное имя">
+      </div>
+
+      <div class="form-group">
+        <label>Прошу (выберите один вариант): <span class="required">*</span></label>
+        <div style="margin-top: 0.5em;">
+          <div style="margin-bottom: 0.6em;">
+            <input type="checkbox" id="opt1"> 
+            <label for="opt1" style="display: inline; font-weight: normal;">Уточнить следующие данные:</label>
+          </div>
+          <textarea placeholder="Какие данные нужно уточнить..."></textarea>
+        </div>
+
+        <div style="margin-top: 1.2em; margin-bottom: 0.6em;">
+          <input type="checkbox" id="opt2"> 
+          <label for="opt2" style="display: inline; font-weight: normal;">Заблокировать следующие данные:</label>
+        </div>
+        <textarea placeholder="Какие данные нужно заблокировать..."></textarea>
+
+        <div style="margin-top: 1.2em; margin-bottom: 0.6em;">
+          <input type="checkbox" id="opt3"> 
+          <label for="opt3" style="display: inline; font-weight: normal;">Удалить следующие данные:</label>
+        </div>
+        <textarea placeholder="Какие данные нужно удалить..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Основание и пояснение:</label>
+        <textarea placeholder="Объясните, почему нужно внести эти изменения..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Контакт для ответа: <span class="required">*</span></label>
+        <input type="email" placeholder="Ваш адрес электронной почты или номер телефона">
+      </div>
+
+      <div class="form-group">
+        <label>Дата подписания:</label>
+        <input type="text" placeholder="__.__.__">
+      </div>
+    </div>
+
+    <h2>Сроки рассмотрения</h2>
+    <p>Оператор обязуется рассмотреть ваше обращение и ответить вам в течение <strong>30 дней</strong> с момента получения заявки. Ответ будет отправлен на указанный вами адрес электронной почты.</p>
+
+    <h2>Дополнительная информация</h2>
+    <p>Если у вас возникли вопросы по использованию форм или вы хотите обсудить свою ситуацию, вы можете написать мне напрямую:</p>
+    <ul>
+      <li><strong>Электронная почта:</strong> tonkiyenastroyki@mail.ru</li>
+      <li><strong>Telegram:</strong> @astrotune_practice</li>
+      <li><strong>Telegram-бот:</strong> @tonkiye_nastroyki_bot</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>При заполнении форм используйте адрес или аккаунт, которые вы указывали при заказе услуги. 
+    Это поможет нам быстрее идентифицировать вас.</p>
+    <p class="req">Романова Евгения Алумбаевна · плательщик налога на профессиональный доход · ИНН 591108165378</p>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+addEventListener('scroll', () => nav.classList.toggle('stuck', scrollY > 10), { passive: true });
+</script>
+</body></html>
